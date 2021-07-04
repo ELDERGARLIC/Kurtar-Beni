@@ -1,6 +1,4 @@
-# Daily Exercises App - Flutter UI
-
-## [Watch it on YouTube](https://youtu.be/qQ75cxc5q8o)
+# Daily Exercises App
 
 **Packages we are using:**
 
@@ -21,4 +19,4 @@ Now come to the details or meditation page, Top of the page has a title with a s
 
 ### Daily Exercises App Final UI
 
-![App UI](/ui.png)
+
