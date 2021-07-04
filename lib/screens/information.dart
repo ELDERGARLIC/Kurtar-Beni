@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:meditation_app/constants.dart';
+import 'package:meditation_app/screens/information_details.dart';
 import 'package:meditation_app/widgets/search_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class DetailsScreen extends StatelessWidget {
+class InformationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -13,7 +14,7 @@ class DetailsScreen extends StatelessWidget {
           Container(
             height: size.height * .45,
             decoration: BoxDecoration(
-              color: kBlueLightColor,
+              color: kBlueColor,
               image: DecorationImage(
                 alignment: Alignment.centerLeft,
                 image: AssetImage("assets/images/undraw_pilates_gpdb.png"),
@@ -31,7 +32,7 @@ class DetailsScreen extends StatelessWidget {
                       height: size.height * 0.05,
                     ),
                     Text(
-                      "Acil Numaralar",
+                      "Yararlı Bilgiler",
                       style: Theme.of(context)
                           .textTheme
                           .display1
@@ -40,7 +41,9 @@ class DetailsScreen extends StatelessWidget {
                     SizedBox(height: 10),
                     SizedBox(
                       width: size.width * .6, // it just take 60% of total width
-                      child: Text("Acil durum ve önemli telefon numaraları listesi"),
+                      child: Text(
+                        "Acil durumlarda hasarı önlemek için yararlı bilgiler",
+                      ),
                     ),
                     SizedBox(
                       height: 10,
@@ -54,73 +57,61 @@ class DetailsScreen extends StatelessWidget {
                       runSpacing: 20,
                       children: <Widget>[
                         SeassionCard(
-                          number: "112",
-                          name: "Ambulans",
+                          number: "Deprem",
+                          name: "Depremde yapılması gerekenler",
                           isDone: true,
                           press: () {
-                            launch("tel://112");
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return InformationDetailsScreen();
+                              }),
+                            );
                           },
                         ),
                         SeassionCard(
-                          number: "110",
-                          name: "İtfaiye",
+                          number: "Sağılık",
+                          name: "Sigaranın Zararları",
                           isDone: true,
                           press: () {
                             launch("tel://110");
                           },
                         ),
                         SeassionCard(
-                          number: "155",
-                          name: "Polis",
+                          number: "Beslenme",
+                          name: "Sağılıklı beslenmenin faydaları",
                           isDone: true,
                           press: () {
                             launch("tel://155");
                           },
                         ),
                         SeassionCard(
-                          number: "153",
-                          name: "Zabıta",
+                          number: "Sağılık",
+                          name: "Stresin zararları",
                           isDone: true,
                           press: () {
                             launch("tel://153");
                           },
                         ),
                         SeassionCard(
-                          number: "156",
-                          name: "Jandarma",
+                          number: "Bilgi",
+                          name: "Toplanma bölgeleri hakkında",
                           isDone: true,
                           press: () {
                             launch("tel://156");
                           },
                         ),
                         SeassionCard(
-                          number: "154",
-                          name: "Trafik",
+                          number: "Deprem",
+                          name: "Deprem çantası hazırlama",
                           isDone: true,
                           press: () {
                             launch("tel://154");
                           },
                         ),
-                        SeassionCard(
-                          number: "186",
-                          name: "Elektrik",
-                          isDone: true,
-                          press: () {
-                            launch("tel://186");
-                          },
-                        ),
-                        SeassionCard(
-                          number: "188",
-                          name: "Cenaze",
-                          isDone: true,
-                          press: () {
-                            launch("tel://188");
-                          },
-                        ),
                       ],
                     ),
                     SizedBox(height: 20),
-
                   ],
                 ),
               ),
@@ -151,9 +142,7 @@ class SeassionCard extends StatelessWidget {
       return ClipRRect(
         borderRadius: BorderRadius.circular(13),
         child: Container(
-          width: constraint.maxWidth / 2 -
-              10, // constraint.maxWidth provide us the available with for this widget
-          // padding: EdgeInsets.all(16),
+          width: constraint.maxWidth,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(13),
@@ -183,7 +172,7 @@ class SeassionCard extends StatelessWidget {
                         border: Border.all(color: kBlueColor),
                       ),
                       child: Icon(
-                        Icons.call,
+                        Icons.info,
                         color: isDone ? Colors.white : kBlueColor,
                       ),
                     ),
@@ -197,7 +186,10 @@ class SeassionCard extends StatelessWidget {
                         ),
                         Text(
                           name,
-                          style: Theme.of(context).textTheme.subtitle.copyWith(fontSize: 11, fontWeight: FontWeight.w400, color: Colors.grey),
+                          style: Theme.of(context).textTheme.subtitle.copyWith(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.grey),
                         ),
                       ],
                     )

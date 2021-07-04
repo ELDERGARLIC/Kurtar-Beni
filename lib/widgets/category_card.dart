@@ -6,6 +6,7 @@ class CategoryCard extends StatelessWidget {
   final String svgSrc;
   final String title;
   final Function press;
+
   const CategoryCard({
     Key key,
     this.svgSrc,
@@ -40,7 +41,11 @@ class CategoryCard extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Spacer(),
-                  SvgPicture.asset(svgSrc),
+                  Container(
+                    child: Image.asset(svgSrc),
+                    height: svgSrc == "assets/images/contacting.png" ? 125 : 90,
+                    width: svgSrc == "assets/images/contacting.png" ? 125 : 90,
+                  ),
                   Spacer(),
                   Text(
                     title,
