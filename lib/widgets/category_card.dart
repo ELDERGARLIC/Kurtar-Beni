@@ -42,7 +42,7 @@ class CategoryCard extends StatelessWidget {
                 children: <Widget>[
                   Spacer(),
                   Container(
-                    child: Image.asset(svgSrc),
+                    child: SvgPicture.asset(svgSrc),
                     height: svgSrc == "assets/images/contacting.png" ? 125 : 90,
                     width: svgSrc == "assets/images/contacting.png" ? 125 : 90,
                   ),

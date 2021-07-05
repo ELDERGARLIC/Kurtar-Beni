@@ -4,6 +4,13 @@ import 'package:meditation_app/widgets/search_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class InformationDetailsScreen extends StatelessWidget {
+
+  InformationDetailsScreen({this.title,this.subTitle,this.paragraph});
+
+  final String title;
+  final String subTitle;
+  final String paragraph;
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -34,12 +41,10 @@ class InformationDetailsScreen extends StatelessWidget {
                       height: 40,
                     ),
                     SeassionCard(
-                      number: "Deprem",
-                      name: "Depremde yapılması gerekenler",
+                      number: title,
+                      name: subTitle,
+                      paragraph: paragraph,
                       isDone: true,
-                      press: () {
-                        launch("tel://112");
-                      },
                     ),
                     SizedBox(height: 20),
                   ],
@@ -58,13 +63,14 @@ class SeassionCard extends StatelessWidget {
   final String name;
   final bool isDone;
   final Function press;
-  const SeassionCard({
-    Key key,
+  final String paragraph;
+
+  SeassionCard({
     this.number,
     this.isDone = false,
     this.press,
     this.name,
-  }) : super(key: key);
+    this.paragraph});
 
   @override
   Widget build(BuildContext context) {
@@ -129,9 +135,9 @@ class SeassionCard extends StatelessWidget {
                           height: 10,
                         ),
                         SizedBox(
-                          width: 250,
+                          width: 300,
                           child: Text(
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac tellus aliquam, interdum dolor rhoncus, euismod neque. Aenean sit amet turpis bibendum, dictum lorem a, tincidunt nulla. Nulla facilisi. Morbi vulputate dignissim arcu, placerat facilisis ex faucibus vitae. Aliquam hendrerit sagittis scelerisque. Cras scelerisque tellus eget sapien placerat, vel malesuada est malesuada. Nulla ac justo mollis, blandit risus nec, sagittis ex. Pellentesque laoreet elit ac fermentum blandit. Nullam viverra urna eget lectus venenatis mattis. Integer ante neque, ornare in porta sed, commodo molestie ex. Pellentesque mollis nisl id bibendum varius.",
+                            paragraph,
                             style:
                                 Theme.of(context).textTheme.subtitle.copyWith(
                                       fontSize: 14,

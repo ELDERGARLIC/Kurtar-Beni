@@ -82,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                       children: <Widget>[
                         CategoryCard(
                           title: "Acil Numaralar",
-                          svgSrc: "assets/images/contacting.png",
+                          svgSrc: "assets/icons/customer-service.svg",
                           press: () {
                             Navigator.push(
                               context,
@@ -94,7 +94,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         CategoryCard(
                           title: "Yararlı Bilgiler",
-                          svgSrc: "assets/images/info.png",
+                          svgSrc: "assets/icons/info.svg",
                           press: () {
                             Navigator.push(
                               context,

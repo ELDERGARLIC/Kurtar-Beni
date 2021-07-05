@@ -57,56 +57,81 @@ class InformationScreen extends StatelessWidget {
                       runSpacing: 20,
                       children: <Widget>[
                         SeassionCard(
-                          number: "Deprem",
-                          name: "Depremde yapılması gerekenler",
+                          number: depremT,
+                          name: depremS,
                           isDone: true,
                           press: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) {
-                                return InformationDetailsScreen();
+                                return InformationDetailsScreen(title: depremT,subTitle: depremS,paragraph: depremP,);
                               }),
                             );
                           },
                         ),
                         SeassionCard(
-                          number: "Sağılık",
-                          name: "Sigaranın Zararları",
+                          number: sigaraT,
+                          name: sigaraS,
                           isDone: true,
                           press: () {
-                            launch("tel://110");
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return InformationDetailsScreen(title: sigaraT,subTitle: sigaraS,paragraph: sigaraP);
+                              }),
+                            );
                           },
                         ),
                         SeassionCard(
-                          number: "Beslenme",
-                          name: "Sağılıklı beslenmenin faydaları",
+                          number: beslenmeT,
+                          name: beslenmeS,
                           isDone: true,
                           press: () {
-                            launch("tel://155");
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return InformationDetailsScreen(title: beslenmeT,subTitle: beslenmeS,paragraph: beslenmeP);
+                              }),
+                            );
                           },
                         ),
                         SeassionCard(
-                          number: "Sağılık",
-                          name: "Stresin zararları",
+                          number: stresT,
+                          name: stresS,
                           isDone: true,
                           press: () {
-                            launch("tel://153");
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return InformationDetailsScreen(title: stresT,subTitle: stresS,paragraph: stresP);
+                              }),
+                            );
                           },
                         ),
                         SeassionCard(
-                          number: "Bilgi",
-                          name: "Toplanma bölgeleri hakkında",
+                          number: toplanmaT,
+                          name: toplanmaS,
                           isDone: true,
                           press: () {
-                            launch("tel://156");
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return InformationDetailsScreen(title: toplanmaT,subTitle: toplanmaS,paragraph: toplanmaP);
+                              }),
+                            );
                           },
                         ),
                         SeassionCard(
-                          number: "Deprem",
-                          name: "Deprem çantası hazırlama",
+                          number: depremCantaT,
+                          name: depremCantaS,
                           isDone: true,
                           press: () {
-                            launch("tel://154");
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return InformationDetailsScreen(title: depremCantaT,subTitle: depremCantaS,paragraph: depremCantaP);
+                              }),
+                            );
                           },
                         ),
                       ],
