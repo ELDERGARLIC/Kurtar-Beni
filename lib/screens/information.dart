@@ -9,6 +9,18 @@ class InformationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.book),
+        backgroundColor: kBlueColor,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return InformationDetailsScreen(title: "Kaynaklar",subTitle: "",paragraph: "",);
+            }),
+          );
+        },
+      ),
       body: Stack(
         children: <Widget>[
           Container(
