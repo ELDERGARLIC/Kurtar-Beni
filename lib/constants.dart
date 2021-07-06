@@ -227,3 +227,9 @@ const depremCantaP = 'Deprem sonrası ilk 72 saatte, yardım ekipleri ulaşana k
     '  -Çakı, düdük, küçük makas\n'+
     '  -Kâğıt, kalem\n'+
     '  -Pilli radyo, el feneri ve yedek piller (dayanıklı/uzun ömürlü pil seçilmeli)';
+
+const kaynaklar = '• https://www.afad.gov.tr/deprem-oncesi-ani-ve-sonrasi-alabileceginiz-onlemleri-biliyor-musunuz\n\n'+
+    '• https://www.florence.com.tr/saglikli-bir-yasam-icin-10-beslenme-onerisi\n\n'+
+    '• https://karabukeah.saglik.gov.tr/TR,75222/stresin-vucudunuz-uzerinde-hic-bilmediginiz-etkileri-neler.html\n\n'+
+    '• https://www.afad.gov.tr/toplanma-alanlari-hakkinda-basin-aciklamasi-15112020\n\n'+
+    '• https://www.afad.gov.tr/afet-ve-acil-durum-cantasi-nasil-hazirlanmali';
