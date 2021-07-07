@@ -9,23 +9,6 @@ class InformationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.book),
-          ],
-        ),
-        backgroundColor: kBlueColor,
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) {
-              return InformationDetailsScreen(title: "Kaynaklar",subTitle: "",paragraph: kaynaklar,);
-            }),
-          );
-        },
-      ),
       body: Stack(
         children: <Widget>[
           Container(
@@ -150,6 +133,24 @@ class InformationScreen extends StatelessWidget {
                               }),
                             );
                           },
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Container(
+                            padding: EdgeInsets.only(left: 10),
+                            height: 35,
+                            width: 110,
+                            decoration: BoxDecoration(
+                              color: kBlueColor,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(Icons.book),
+                                Text("Kaynaklar"),
+                              ],
+                            ),
+                          ),
                         ),
                       ],
                     ),
