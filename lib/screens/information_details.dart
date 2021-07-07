@@ -135,7 +135,7 @@ class SeassionCard extends StatelessWidget {
                           height: 10,
                         ),
                         SizedBox(
-                          width: 300,
+                          width: 250,
                           child: Text(
                             paragraph,
                             style:

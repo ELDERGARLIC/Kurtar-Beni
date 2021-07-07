@@ -134,21 +134,31 @@ class InformationScreen extends StatelessWidget {
                             );
                           },
                         ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Container(
-                            padding: EdgeInsets.only(left: 10),
-                            height: 35,
-                            width: 110,
-                            decoration: BoxDecoration(
-                              color: kBlueColor,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(Icons.book),
-                                Text("Kaynaklar"),
-                              ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return InformationDetailsScreen(title: "Kaynaklar",subTitle: "",paragraph: kaynaklar);
+                              }),
+                            );
+                          },
+                          child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Container(
+                              padding: EdgeInsets.only(left: 10),
+                              height: 35,
+                              width: 110,
+                              decoration: BoxDecoration(
+                                color: kBlueColor,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.book),
+                                  Text("Kaynaklar"),
+                                ],
+                              ),
                             ),
                           ),
                         ),
