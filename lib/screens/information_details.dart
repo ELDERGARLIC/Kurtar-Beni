@@ -3,7 +3,7 @@ import 'package:meditation_app/constants.dart';
 import 'package:meditation_app/widgets/search_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class InformationDetailsScreen extends StatelessWidget {
+class InformationDetailsScreen extends StatefulWidget {
 
   InformationDetailsScreen({this.title,this.subTitle,this.paragraph});
 
@@ -11,6 +11,16 @@ class InformationDetailsScreen extends StatelessWidget {
   final String subTitle;
   final String paragraph;
 
+  @override
+  _InformationDetailsScreenState createState() => _InformationDetailsScreenState();
+}
+
+
+class _InformationDetailsScreenState extends State<InformationDetailsScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -41,10 +51,11 @@ class InformationDetailsScreen extends StatelessWidget {
                       height: 40,
                     ),
                     SeassionCard(
-                      number: title,
-                      name: subTitle,
-                      paragraph: paragraph,
+                      number: widget.title,
+                      name: widget.subTitle,
+                      paragraph: widget.paragraph,
                       isDone: true,
+                      context: context,
                     ),
                     SizedBox(height: 20),
                   ],
@@ -64,13 +75,16 @@ class SeassionCard extends StatelessWidget {
   final bool isDone;
   final Function press;
   final String paragraph;
+  final BuildContext context;
 
   SeassionCard({
     this.number,
     this.isDone = false,
     this.press,
     this.name,
-    this.paragraph});
+    this.paragraph,
+    this.context,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -135,7 +149,7 @@ class SeassionCard extends StatelessWidget {
                           height: 10,
                         ),
                         SizedBox(
-                          width: 250,
+                          width: MediaQuery.of(context).size.width * 0.6,
                           child: Text(
                             paragraph,
                             style:

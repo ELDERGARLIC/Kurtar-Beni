@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:meditation_app/constants.dart';
 import 'package:meditation_app/screens/information_details.dart';
 import 'package:meditation_app/widgets/search_bar.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class InformationScreen extends StatelessWidget {
   @override
